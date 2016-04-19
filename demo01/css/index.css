@@ -1,0 +1,105 @@
+html, body {
+	width: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+[v-cloak] {
+  display: none;
+}
+.fl-l {
+	float: left;
+}
+.fl-r {
+	float: right;
+}
+.dis-n {
+	display: none;
+}
+
+
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+}
+.header ul {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.header li {
+	list-style: none;
+	line-height: 50px;
+}
+.header .li-left {
+	width: 50%;
+}
+.header .li-right {
+	width: 50%;
+}
+.bottom-line {
+	position: absolute;
+	width: 30%;
+	height: 2px;
+	bottom: 0;
+	left: 10%;
+	opacity: 1;
+	background-color: red;
+}
+.bottom-line-left {
+	left: 10%;
+	animation: left .3s;
+}
+.bottom-line-right {
+	left: 60%;
+	animation: right .3s;
+}
+
+@keyframes left{
+	from{
+		opacity: 0;
+		left: 60%;
+	}
+	to{
+		left: 10%;
+	}
+}
+@keyframes right{
+	from{
+		opacity: 0;
+		left: 10%;
+	}
+	to{
+		left: 60%;
+	}
+}
+
+
+.left-content {
+	background-color: #EEEEEE;
+}
+
+.left-content select {
+  min-width: 300px;
+}
+
+.right-content {
+	background-color: #FFFF00;
+}
+
+.staggered-transition {
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	transform: translate(0, 0);
+    transition: all .3s ease;
+}
+.staggered-enter, .staggered-leave {
+    opacity: 0;
+    transform: translate(0, 500px);
+}

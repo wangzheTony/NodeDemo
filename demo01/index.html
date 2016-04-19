@@ -4,13 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title></title>
-    <script src="js/mui.min.js"></script>
+    <!--<script src="js/mui.min.js"></script>
     <link href="css/mui.min.css" rel="stylesheet"/>
     <script type="text/javascript" charset="UTF-8">
       	mui.init();
-    </script>
+    </script>-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
 </head>
-<body>
+<body id="main" v-cloak>
+	<div class="header">
+		<ul>
+			<li class="li-left fl-l" @click="cut(true)">左边</li>
+			<li class="li-right fl-l" @click="cut(false)">右边</li>
+		</ul>
+		<!--v-bind:class="{ 'bottom-line-left': location, 'bottom-line-right': !location }"--> 
+		<div class="bottom-line" ></div>
+	</div>
+	<div class="content">
+		<div class="left-content" v-show="site" transition="staggered" stagger="100">
+			<p>Selected：{{ selected }}</p>
+			<select v-select="selected" :options="options">
+				<option value="0">default</option>
+			</select>
+		</div>
+		<div class="right-content" v-show="!site" transition="staggered" stagger="100">
+			2
+		</div>
+	</div>
 	
+	
+	
+	<!--<script type="text/javascript" src="http://cdn6.jinxidao.com/uploads/active/js/zepto.min.js"></script>-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="http://cdn7.jinxidao.com/weixin/js/vue.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
