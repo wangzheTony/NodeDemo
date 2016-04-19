@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>星星评价</title>
+    <style type="text/css">
+    a,button,input,optgroup,select,textarea,li { -webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/ }
+    .starCon {
+        margin-bottom: 5em;
+        clear: both;
+    }
+    
+    .starTitle {
+        font-size: 1.6em;
+        color: #000;
+        clear: both;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    
+    .starTips {
+        clear: both;
+        font-size: 1.6em;
+        line-height: 1.6em;
+        color: #000;
+        margin: 2em 0;
+    }
+    
+    .starCon {
+        position: relative;
+        margin: 0 auto;
+    }
+    
+    .starCon ul {
+        float: left;
+        display: inline;
+        height: 19px;
+        line-height: 19px;
+    }
+    
+    .starCon ul {
+        margin: 0 0 3em;
+    }
+    
+    .starCon li {
+        float: left;
+        margin-right: .8em;
+        width: 2.3em;
+        height: 2.3em;
+        cursor: pointer;
+        text-indent: -9999px;
+        display: inline-block;
+        background: url(images/star_udiffi.png) no-repeat;
+        background-size: 100%;
+    }
+    
+    .starCon li.on {
+        width: 2.3em;
+        height: 2.3em;
+        background: url(images/star_choies.png) no-repeat;
+        background-size: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="starBg">
+        <div class="starCon" id="star1">
+            <div class="starTitle">
+                球场设备：
+            </div>
+            <ul>
+                <li><a href="javascript:;">1</a></li>
+                <li><a href="javascript:;">2</a></li>
+                <li><a href="javascript:;">3</a></li>
+                <li><a href="javascript:;">4</a></li>
+                <li><a href="javascript:;">5</a></li>
+            </ul>
+            <input type="hidden" value="0" id="sebei">
+        </div>
+        <div class="starCon" id="star2">
+            <div class="starTitle">服务态度：</div>
+            <ul>
+                <li><a href="javascript:;">1</a></li>
+                <li><a href="javascript:;">2</a></li>
+                <li><a href="javascript:;">3</a></li>
+                <li><a href="javascript:;">4</a></li>
+                <li><a href="javascript:;">5</a></li>
+            </ul>
+            <input type="hidden" value="0" id="fuwu">
+        </div>
+        <div class="starCon" id="star3">
+            <div class="starTitle">总体评价：</div>
+            <ul>
+                <li><a href="javascript:;">1</a></li>
+                <li><a href="javascript:;">2</a></li>
+                <li><a href="javascript:;">3</a></li>
+                <li><a href="javascript:;">4</a></li>
+                <li><a href="javascript:;">5</a></li>
+            </ul>
+            <input type="hidden" value="0" id="zongping">
+        </div>
+        <div style="clear: both;">
+            <button style="background: #82BB4A;margin-top: 30px;padding: 15px 80px;border:0;color:#fff" id="subComm">确认</button>
+        </div>
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <!-- <script type="text/javascript"src="http://maps.google.com/maps/api/js"></script> -->
+    <script type="text/javascript">
+    $(function() {
+
+
+    });
+    starComm('star1');
+    starComm('star2');
+    starComm('star3');
+
+    function starComm(starId) {
+        var oStar = document.getElementById(starId);
+        var aLi = oStar.getElementsByTagName('li');
+        var aUl = oStar.getElementsByTagName('ul')[0];
+        var oP = oStar.getElementsByTagName('input')[0];
+        var i = iScore = iStar = 0;
+        for (i = 1; i <= aLi.length; i++) {
+            aLi[i - 1].index = i;
+            // 点击后进行评分处理
+            aLi[i - 1].onclick = function() {
+                iStar = this.index;
+                fnPoint(iStar);
+                oP.value = iStar;
+            }
+        }
+        // 评分处理
+        var fnPoint = function(iArg) {
+            // 分数赋值
+            iScore = iArg || iStar;
+            for (i = 0; i < aLi.length; i++) {
+                aLi[i].className = i < iScore ? "on" : "";
+            }
+        }
+
+        document.getElementById('subComm').onclick = function() {
+            var sebei = document.getElementById('sebei').value;
+            var fuwu = document.getElementById('fuwu').value;
+            var zongping = document.getElementById('zongping').value;
+            alert(sebei + '+' + fuwu + '+' + zongping);
+        }
+    }
+    </script>
+</body>
+
+</html>

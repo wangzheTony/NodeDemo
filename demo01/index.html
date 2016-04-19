@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title></title>
-    <!--<script src="js/mui.min.js"></script>
-    <link href="css/mui.min.css" rel="stylesheet"/>
-    <script type="text/javascript" charset="UTF-8">
-      	mui.init();
-    </script>-->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css"/>
+    <style type="text/css">
+    	.wipe {
+			margin-top: 20px;
+			margin-left:auto;
+			margin-right: auto;
+			width: 250px;
+			height: 50px;
+			background: url(images/girl.jpg) no-repeat;
+			background-size: 100% 100%;
+			background-color: #FFFFFF;
+		}
+		canvas {
+			opacity: 1;
+		}
+    </style>
+    <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css"/>-->
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
 </head>
 <body id="main" v-cloak>
@@ -23,22 +33,84 @@
 	</div>
 	<div class="content">
 		<div class="left-content" v-show="site" transition="staggered" stagger="100">
-			<p>Selected：{{ selected }}</p>
+			<!--<p>Selected：{{ selected }}</p>
 			<select v-select="selected" :options="options">
 				<option value="0">default</option>
-			</select>
+			</select>-->
+			<div class="wipe" id="wipe1"></div>
+			<div class="wipe" id="wipe2"></div>
+			<div class="wipe" id="wipe3"></div>
 		</div>
 		<div class="right-content" v-show="!site" transition="staggered" stagger="100">
-			2
+			<h1 class="ribbon">
+			   <strong class="ribbon-content">Everybody loves ribbons</strong>
+			</h1>
 		</div>
 	</div>
 	
 	
 	
-	<!--<script type="text/javascript" src="http://cdn6.jinxidao.com/uploads/active/js/zepto.min.js"></script>-->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="http://cdn6.jinxidao.com/uploads/active/js/zepto.min.js"></script>
+	<!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
 	<script type="text/javascript" src="http://cdn7.jinxidao.com/weixin/js/vue.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js" type="text/javascript" charset="utf-8"></script>-->
 	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="js/canvas.js"></script>
+	<script src="js/wipe.js"></script>
+
+	<script>
+	var wipe = new Wipe({
+		el: '#wipe1',
+		fg: '#ccc',
+		size: 10,
+		debug: false,
+		autoWipe: false,
+		data: null,
+		onswiping: function (percent) {
+			console.log(percent);
+			if (percent <= 0) return;
+			if (percent < 50) {
+			} else if (percent > 50) {
+				$('#wipe1').find("canvas").remove();
+			} else if (percent > 80) {
+			}
+		}
+	});
+	var wipe = new Wipe({
+		el: '#wipe2',
+		fg: '#ccc',
+		size: 10,
+		debug: false,
+		autoWipe: false,
+		data: null,
+		onswiping: function (percent) {
+			console.log(percent);
+			if (percent <= 0) return;
+			if (percent < 50) {
+			} else if (percent > 50) {
+				$('#wipe2').find("canvas").remove();
+			} else if (percent > 80) {
+			}
+		}
+	});
+	var wipe = new Wipe({
+		el: '#wipe3',
+		fg: '#ccc',
+		size: 10,
+		debug: false,
+		autoWipe: false,
+		data: null,
+		onswiping: function (percent) {
+			console.log(percent);
+			if (percent <= 0) return;
+			if (percent < 50) {
+			} else if (percent > 50) {
+				$('#wipe3').find("canvas").remove();
+			} else if (percent > 80) {
+			}
+		}
+	});
+	</script>
 </body>
 </html>

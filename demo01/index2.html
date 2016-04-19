@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>刮刮乐</title>
+		<script type="text/javascript">
+			window.onload = function() {
+				init();
+			}
+			CanvasRenderingContext2D.prototype.clearArc = function(x, y, radius, startAngle, endAngle, counterclockwise) {
+				var distance = function(x0, y0, x1, y1) {
+					var dis = Math.sqrt(Math.pow(x0 - x1, 2) + Math.pow(y0 - y1, 2));
+					//return Math.ceil(dis*10000)/10000;
+					return Math.round(dis * 10000) / 10000;
+				};
+				//首先获得矩形
+				var diameter = radius * 2;
+				var startX = x - radius;
+				var cx = radius - (0 - startX);
+				startX = startX < 0 ? 0 : startX;
+				cx = cx - startX;
+				var startY = y - radius;
+				var cy = radius - (0 - startY);
+				startY = startY < 0 ? 0 : startY;
+				cy = cy - startY;
+				var imgData = this.getImageData(startX, startY, diameter, diameter); //需要处理的矩形
+				for (var i = 0; i < imgData.data.length; i += 4) {
+					//矩阵内的坐标
+					var ii = i / 4;
+					var ix = Math.floor(ii / imgData.width);
+					var iy = ii % imgData.height;
+					var dis = distance(ix, iy, cx, cy);
+					if (dis <= radius) { //此点在圆内
+						imgData.data[i + 0] = 0;
+						imgData.data[i + 1] = 0;
+						imgData.data[i + 2] = 0;
+						imgData.data[i + 3] = 0;
+						continue;
+					}
+					var dr = dis - radius;
+					if (dr < Math.SQRT2) {
+						var n = Math.sqrt(Math.pow(dr, 2) / 2) * 256; //新
+						var o = imgData.data[i + 3];
+						imgData.data[i + 3] = n < o ? n : o;
+						continue;
+					}
+				}
+				this.putImageData(imgData, startX, startY);
+			};
+
+			function init() {
+				var imageWidth = 200;
+				var imageHeight = 100;
+				var gglc = document.getElementById("gglc");
+				var gglc2D = gglc.getContext("2d");
+				gglc2D.fillStyle = '#cccccc'; //设置覆盖层的颜色
+				gglc2D.fillRect(1, 1, imageWidth, imageHeight); //设置覆盖的区域
+				//gglc2D.clearArc(25,25,20);
+				gglc.addEventListener("touchmove", function(event) {
+					event.preventDefault();
+					for (var i in event.targetTouches) {
+						var touch = event.targetTouches[i];
+						gglc2D.clearArc(touch.pageX, touch.pageY, 20);
+					}
+				}, false);
+				gglc.addEventListener("touchstart", function(event) {
+					event.preventDefault();
+					for (var i in event.targetTouches) {
+						var touch = event.targetTouches[i];
+						gglc2D.clearArc(touch.pageX, touch.pageY, 20);
+					}
+				}, false);
+			}
+		</script>
+	</head>
+
+	<body>
+		<div style="position: relative; width: 100%;height: 100%;">
+			<div style="position: absolute; width: 200px; height: 100px; text-align: center;line-height: 100px;border: 1px solid #ccc;'">谢谢惠顾</div>
+			<canvas style="position: absolute;" id="gglc" width="201" height="101"></canvas>
+		</div>
+	</body>
+
+</html>
