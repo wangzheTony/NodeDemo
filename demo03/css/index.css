@@ -1,0 +1,10 @@
+/*CSS源代码*/
+body{font-family: 'microsoft yahei',Arial,sans-serif;}
+
+h1,h2{font-size:18px;font-weight: normal; }
+
+h2{color: #999;}
+
+span{font-size:14px;}
+
+canvas{background:#222;}

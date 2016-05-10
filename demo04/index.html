@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		
+		<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.css">
+		<!--如果你用到了拓展包中的组件，还需要引用下面两个-->
+		<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.css">
+		
+		<title>sui 示例</title>
+		<style>
+			img {
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="page-group">
+			<!--page1-->
+			<div class="page page-current" id="router1">
+				<!--标题栏-->
+				<header class="bar bar-nav">
+					<a class="icon icon-me pull-left open-panel"></a>
+					<a class="icon icon-refresh pull-right"></a>
+                	<h1 class="title">标题</h1>
+				</header>
+				
+				<!--工具栏-->
+				<nav class="bar bar-tab">
+					<a href="#" class="tab-item active">
+						<span class="icon icon-home"></span>
+                    	<span class="tab-label">首页</span>
+					</a>
+					<a href="#" class="tab-item">
+						<span class="icon icon-search"></span>
+                    	<span class="tab-label">搜索</span>
+					</a>
+					<a href="#" class="tab-item">
+						<span class="icon icon-star"></span>
+                    	<span class="tab-label">收藏</span>
+                    	<span class="badge">2</span>
+					</a>
+					<a href="#" class="tab-item">
+						<span class="icon icon-settings"></span>
+                    	<span class="tab-label">设置</span>
+					</a>
+				</nav>
+				
+				<!-- 这里是页面内容区 -->
+	            <div class="content content-padded">
+	            	<p>我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白,我的左右两边有留白</p>
+	                <p><a href="#router2">请求路由2</a></p>
+	                <p><a href="#router3">请求路由3</a></p>
+	                <p><a href="#router4">请求路由4</a></p>
+	                <p><a href="#router5">请求路由5</a></p>
+	                <p><a href="#router6">请求路由6</a></p>
+	                <p><a href="step2.html">step2.html</a></p>
+	                	
+	                <!--<div class="content-block">这里是content</div>-->
+	            </div>
+			</div>
+			
+			<!--page2-->
+			<div class="page" id="router2">
+				<!--标题栏-->
+				<header class="bar bar-nav">
+					<a class="button button-link button-nav pull-left back" href="/docs-demos/router">
+						<span class="icon icon-left"></span> 返回
+					</a>
+                	<h1 class="title">路由页面2</h1>
+				</header>
+				
+				<!--search-->
+				<div class="bar bar-header-secondary">
+					<div class="searchbar">
+					    <a class="searchbar-cancel">取消</a>
+					    <div class="search-input">
+					      <label class="icon icon-search" for="search"></label>
+					      <input type="search" id='search' placeholder='输入关键字...'/>
+					    </div>
+					</div>
+				</div>
+				
+				<!-- 这里是页面内容区 -->
+	            <div class="content">
+	            	<div class="buttons-tab">
+					    <a href="#tab1" class="tab-link active button">全部</a>
+					    <a href="#tab2" class="tab-link button">待付款</a>
+					    <a href="#tab3" class="tab-link button">待发货</a>
+					</div>
+					<div class="content-block">
+					    <div class="tabs">
+					      <div id="tab1" class="tab active">
+					        <div class="content-block">
+					        	<p>This is tab 1 content</p>
+					        </div>
+					      </div>
+					      <div id="tab2" class="tab">
+					        <div class="content-block">
+					        	<p>This is tab 2 content</p>
+					        </div>
+					      </div>
+					      <div id="tab3" class="tab">
+					        <div class="content-block">
+					        	<p>This is tab 3 content</p>
+					        </div>
+					      </div>
+					    </div>
+					</div>
+	            </div>
+			</div>
+			
+			<!--page3-->
+			<div class="page" id="router3">
+				<!--标题栏-->
+				<header class="bar bar-nav">
+					<a class="button button-link button-nav pull-left back" href="/docs-demos/router">
+						<span class="icon icon-left"></span> 返回
+					</a>
+                	<h1 class="title">路由页面3</h1>
+				</header>
+				
+				<!-- 这里是页面内容区 -->
+	            <div class="content">
+	            	<div class="content-block">
+	            		<p><a href="#" class="alert-text">提示语</a></p>
+	            		<p><a href="#" class="alert-text-title">带标题提示语</a></p>
+	            		<p><a href="#" class="confirm-ok">Confirm with text and Ok callback</a></p>
+	            		<p><a href="#" class="open-indicator">Open Indicator</a></p>
+	            		<p><a href="#" class="open-preloader">Open Preloader</a></p>
+      					<p><a href="#" class="open-preloader-title">Open Preloader with custom title</a></p>
+      					<p><a href="#" class="open-about">Open About Popup </a></p>
+    					<p><a href="#" class="open-services">Open Services Popup </a></p>
+	            	</div>
+	            </div>
+			</div>
+			
+			<!--page4-->
+			<div class="page" id="router4">
+				<!--标题栏-->
+				<header class="bar bar-nav">
+					<a class="button button-link button-nav pull-left back" href="/docs-demos/router">
+						<span class="icon icon-left"></span> 返回
+					</a>
+                	<h1 class="title">路由页面4</h1>
+				</header>
+				
+				<!-- 这里是页面内容区 -->
+	            <div class="content pull-to-refresh-content" data-ptr-distance="55">
+	            	<!-- 默认的下拉刷新层 -->
+				    <div class="pull-to-refresh-layer">
+				        <div class="preloader"></div>
+				        <div class="pull-to-refresh-arrow"></div>
+				    </div>
+				    <!-- 下面是正文 -->
+				    <div class="card-container">
+				        <div class="card">
+				            <div class="card-header">card</div>
+				            <div class="card-content">
+				                <div class="card-content-inner">
+		                    		这里是第1个card，下拉刷新会出现第2个card。
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+	            </div>
+			</div>
+			
+			<!--page5-->
+			<div class="page" id="router5">
+				<!--标题栏-->
+				<header class="bar bar-nav">
+					<a class="button button-link button-nav pull-left back" href="/docs-demos/router">
+						<span class="icon icon-left"></span> 返回
+					</a>
+                	<h1 class="title">路由页面5</h1>
+				</header>
+				
+				<!-- 这里是页面内容区 -->
+	            <div class="content infinite-scroll infinite-scroll-bottom" data-distance="100">
+	            	<div class="list-block">
+			            <ul class="list-container">
+			            </ul>
+			        </div>
+			        <!-- 加载提示符 -->
+			        <div class="infinite-scroll-preloader">
+			            <div class="preloader"></div>
+			        </div>
+	            </div>
+			</div>
+			
+			
+			<!--page6-->
+			<div class="page" id="router6">
+				<!--标题栏-->
+				<header class="bar bar-nav">
+					<a class="button button-link button-nav pull-left back" href="/docs-demos/router">
+						<span class="icon icon-left"></span> 返回
+					</a>
+                	<h1 class="title">路由页面6</h1>
+				</header>
+				
+				<!-- 这里是页面内容区 -->
+	            <div class="content">
+	            	<!-- Slider -->
+					<div class="swiper-container" data-space-between='10'>
+					    <div class="swiper-wrapper">
+						    <div class="swiper-slide"><img src="//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i1/TB1n3rZHFXXXXX9XFXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg" alt=""></div>
+						    <div class="swiper-slide"><img src="//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i4/TB10rkPGVXXXXXGapXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg" alt=""></div>
+						    <div class="swiper-slide"><img src="//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i1/TB1kQI3HpXXXXbSXFXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg" alt=""></div>
+					    </div>
+					    <div class="swiper-pagination"></div>
+					</div>
+					<div class="content-block row">
+						<div class="col-50"><a href="#" class="button pb-standalone">Standalone</a></div>
+    					<div class="col-50"><a href="#" class="button pb-popup">Popup</a></div>
+					</div>
+	            </div>
+			</div>
+		</div>
+		
+		<!-- popup, panel 等放在这里 -->
+    	<div class="popup-overlay">
+    		<!-- About Popup -->
+			<div class="popup popup-about">
+				<div class="content-block">
+				    <p>About</p>
+				    <p><a href="#" class="close-popup">Close popup</a></p>
+				    <p>Lorem ipsum dolor ...</p>
+				</div>
+			</div>
+			<!-- Services Popup -->
+			<div class="popup popup-services">
+				<div class="content-block">
+				    <p>Services</p>
+				    <p><a href="#" class="close-popup">Close popup</a></p>
+				    <p>Lorem ipsum dolor ...</p>
+				</div>
+			</div>
+    	</div>
+    	<!-- popup, panel 等放在这里 -->
+    	<div class="panel-overlay">
+    		
+    	</div>
+		
+    	<!-- Left Panel with Reveal effect -->
+	    <div class="panel panel-left panel-reveal">
+	        <div class="content-block">
+	            <p>这是一个侧栏</p>
+	            <p></p>
+	            <!-- Click on link with "close-panel" class will close panel -->
+	            <p><a href="#" class="close-panel">关闭</a></p>
+	        </div>
+	    </div>
+		
+		
+		
+		<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.js' charset='utf-8'></script>
+		<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.js' charset='utf-8'></script>
+		<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.js' charset='utf-8'></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$.config = {
+				autoInit: false,// 在 document.onload 之后自动调用 $.init 方法。如果你的页面内容是异步加载的，应该关闭这个配置，并且在加载完成之后手动调用 $.init
+				router: true,// 默认启用MSUI内置的Router功能。如果想关闭此功能，在页面加载MSUI之前配置$.config.router = false 即可。
+				routerFilter: function($link) {
+		            // 某个区域的 a 链接不想使用路由功能
+		            if ($link.is('.disable-router a')) {
+		                return false;
+		            }
+		            return true;
+		        },// 当前点击链接是否使用路由功能的自定义过滤器。这是一个函数，实参是当前点击的链接的 Zepto 对象（即 $('the-link'）），返回 false 表示不使用路由功能，返回 true 表示进入路由功能后续处理。
+				showPageLoadingIndicator: true,//  	在加载新页面过程中显示一个加载指示器。
+				swipePanel: "left",// 是否可以通过左右滑动打开侧栏，一次只能指定一个方向。
+				swipePanelOnlyClose: true// 只允许滑动关闭侧栏，不允许滑动打开。
+			}
+		</script>
+	</body>
+</html>

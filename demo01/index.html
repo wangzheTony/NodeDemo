@@ -18,6 +18,12 @@
 		canvas {
 			opacity: 1;
 		}
+		.fade-transition {
+			transition: opacity .3s ease;
+		}
+		.fade-enter, .fade-leave {
+			opacity: 0;
+		}
     </style>
     <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css"/>-->
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
@@ -31,22 +37,18 @@
 		<div class="bottom-line" ></div>
 	</div>
 	<div class="content">
-		<div class="left-content" v-show="site" transition="staggered" stagger="100">
-			<!--<p>Selected：{{ selected }}</p>
-			<select v-select="selected" :options="options">
-				<option value="0">default</option>
-			</select>-->
+		<component :is="currentView" transition="fade" transition-mode="out-in" :index="12312" keep-alive></component>
+		<!--<div class="left-content" v-show="site" transition="staggered" stagger="100">
 			<div class="wipe" id="wipe1"></div>
 			<div class="wipe" id="wipe2"></div>
 			<div class="wipe" id="wipe3"></div>
-		</div>
-		<div class="right-content" v-show="!site" transition="staggered" stagger="100">
+		</div>-->
+		<!--<div class="right-content" v-show="!site" transition="staggered" stagger="100">
 			<h1 class="ribbon">
 			   <strong class="ribbon-content">Everybody loves ribbons</strong>
 			</h1>
-		</div>
+		</div>-->
 	</div>
-	
 	
 	
 	<script type="text/javascript" src="http://cdn6.jinxidao.com/uploads/active/js/zepto.min.js"></script>
@@ -55,11 +57,11 @@
 	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js" type="text/javascript" charset="utf-8"></script>-->
 	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 	
-	<script src="js/wipe/canvas.js"></script>
-	<script src="js/wipe/wipe.js"></script>
+	<script src="http://cdn7.jinxidao.com/weixin/js/wipe/canvas.js"></script>
+	<script src="http://cdn7.jinxidao.com/weixin/js/wipe/wipe.js"></script>
 
 	<script>
-	var wipe = new Wipe({
+	var wipe1 = new Wipe({
 		el: '#wipe1',
 		fg: '#ccc',
 		size: 10,
@@ -67,16 +69,14 @@
 		autoWipe: false,
 		data: null,
 		onswiping: function (percent) {
-			console.log(percent);
 			if (percent <= 0) return;
 			if (percent < 50) {
 			} else if (percent > 50) {
-				$('#wipe1').find("canvas").remove();
-			} else if (percent > 80) {
+				wipe1.clear();
 			}
 		}
 	});
-	var wipe = new Wipe({
+	var wipe2 = new Wipe({
 		el: '#wipe2',
 		fg: '#ccc',
 		size: 10,
@@ -84,16 +84,15 @@
 		autoWipe: false,
 		data: null,
 		onswiping: function (percent) {
-			console.log(percent);
 			if (percent <= 0) return;
 			if (percent < 50) {
 			} else if (percent > 50) {
-				$('#wipe2').find("canvas").remove();
+				wipe2.clear();
 			} else if (percent > 80) {
 			}
 		}
 	});
-	var wipe = new Wipe({
+	var wipe3 = new Wipe({
 		el: '#wipe3',
 		fg: '#ccc',
 		size: 10,
@@ -101,11 +100,10 @@
 		autoWipe: false,
 		data: null,
 		onswiping: function (percent) {
-			console.log(percent);
 			if (percent <= 0) return;
 			if (percent < 50) {
 			} else if (percent > 50) {
-				$('#wipe3').find("canvas").remove();
+				wipe3.clear();
 			} else if (percent > 80) {
 			}
 		}
