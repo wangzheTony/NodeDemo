@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+	<script type="text/javascript" src="http://cdn-test.jinxidao.com/direct_selling/js/jquery.js"></script>
+	<script type="text/javascript" src="js/verify.js"></script>
+	<script type="text/javascript">
+		console.log($.verify.getVersion());
+		console.log($.verify.ifYCF());
+		var countdownTamp = 1468987200000;
+
+		var intetval = setInterval(function(){
+			// console.log($.verify.countDown(countdownTamp, intetval));
+		}, 1000);
+
+		console.log($.verify.getSearchParameter().get('id'));
+	</script>
+</body>
+</html>
