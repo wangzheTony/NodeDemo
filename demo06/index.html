@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>node-test</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+
+	<script type="text/javascript" src="js/util/verify.js"></script>
+	<script type="text/javascript">
+		var val = event.verify.getByte('12131212');
+		console.log(val);
+
+
+		var m = event.verify.telephone({'phone':' 18680588948 '});
+		console.log(m);
+
+		event.methods.dateToStr(new Date(), 'yy年第q季度');
+	</script>
+</body>
+</html>
