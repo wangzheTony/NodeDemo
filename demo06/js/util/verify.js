@@ -1,7 +1,8 @@
-var event = {};
-
 ;(function(){
 
+	window.event = {
+		version: '0.0.1'
+	};
 	var app = {};
 
 	var ua = navigator.userAgent.toLowerCase(),
@@ -264,6 +265,6 @@ var event = {};
         },
 	};
 
-	event.methods = methods;
-	event.verify = verify;
+	window.event.methods = methods;
+	window.event.verify = verify;
 })();
