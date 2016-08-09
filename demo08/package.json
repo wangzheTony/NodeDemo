@@ -1,0 +1,26 @@
+{
+    "name": "demo08",
+    "version": "1.0.0",
+    "description": "前端静态库",
+    "main": "app.js",
+    "scripts": {
+        "start": "node ./bin/server"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "css-loader": "^0.23.1",
+        "extract-text-webpack-plugin": "^1.0.1",
+        "fs-extra": "^0.30.0",
+        "gulp": "^3.9.1",
+        "jsx-loader": "^0.13.2",
+        "sass-loader": "^4.0.0",
+        "source-map-loader": "^0.1.5",
+        "style-loader": "^0.13.1",
+        "url-loader": "^0.5.7",
+        "webpack": "^1.13.1",
+        "webpack-dev-server": "^1.14.1",
+        "webpack-stream": "^3.2.0",
+        "yargs": "^4.8.1"
+    }
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/js/book.js"],"names":[],"mappings":";;;;AAAA,EAAC,UAAU,CAAC;AACZ,EAAC,OAAO,CAAC,GAAG,CAAC,iBAAiB,CAAC,CAAC;;EAE/B,GAAG,C","file":"book.js","sourcesContent":["(function(){\r\n\tconsole.log('loading book.js');\r\n\t\r\n})();\n\n\n/** WEBPACK FOOTER **\n ** ./src/js/book.js\n **/"],"sourceRoot":""}
