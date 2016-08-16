@@ -5,15 +5,13 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<title>Webpack</title>
 
-	<link rel="stylesheet" type="text/css" href="dist/src/style/index.css">
 </head>
 <body>
 	<div class="header">
 		
 	</div>
 
-	<script type="text/javascript" src="dist/common.js"></script>
-	<script type="text/javascript" src="dist/src/js/page/index.js"></script>
+	<script type="text/javascript" src="src/js/util/verify.js"></script>
 	<script type="text/javascript">
 		var val = event.verify.getByte('12131212');
 		console.log(val);
@@ -23,6 +21,11 @@
 		console.log(m);
 
 		event.methods.dateToStr(new Date(), 'yy年第q季度');
+		
+		setInterval(function(){
+			var objTime = event.methods.getTimeRemaining(1470996000);
+			console.log(objTime.seconds);
+		}, 1000);
 	</script>
 </body>
 </html>

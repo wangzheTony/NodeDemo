@@ -205,6 +205,26 @@
 		append: function(array, newArray) {
 			array.push.apply(array, newArray);
 			return array;
+		},
+		/**
+		 * @param  倒计时 {[endtime 时间戳(单位：秒)]}
+		 * @return {[type]}
+		 */
+		getTimeRemaining: function(endtime){
+			var startTime = new Date().getTime();
+			var t = parseInt(endtime*1000) - new Date().getTime();
+			var seconds = Math.floor((t/1000) % 60);
+			var minutes = Math.floor((t/1000/60) % 60);
+			var hours = Math.floor((t/(1000*60*60)) % 24);
+			var days = Math.floor(t/(1000*60*60*24));
+
+			return {
+				'total': parseInt(t/1000),
+				'days': days,
+				'hours': hours,
+				'minutes': minutes,
+				'seconds': seconds
+			};
 		}
 	};
 

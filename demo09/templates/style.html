@@ -1,0 +1,5 @@
+<!-- 在base.html 中include进这个文件 -->
+
+{% for (var css in o.htmlWebpackPlugin.files.css) { %}
+    <link href="{{ STATIC_URL }}dist{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
+{% } %}

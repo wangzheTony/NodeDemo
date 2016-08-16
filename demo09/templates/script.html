@@ -1,0 +1,5 @@
+<!-- 在base.html 中include进这个文件 -->
+
+{% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
+    <script src="{{ STATIC_URL }}dist{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
+{% } %}
